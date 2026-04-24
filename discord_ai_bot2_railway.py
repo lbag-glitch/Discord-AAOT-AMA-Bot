@@ -23,7 +23,7 @@ def call_openai(question):
     )
     # Print the response
     response = completion.choices[0].message.content
-    print(response)
+    #print(response)
     return response
 
 
@@ -45,9 +45,9 @@ async def on_message(message):
         await message.channel.send('Hello! I am AAOT-AMA-Bot. Do you want to ask me anything about your products? ')
 
     if message.content.startswith('$question'):
-        print(f"Message: {message.content}")                
+        #print(f"Message: {message.content}")                
         message_content = message.content.split("$question")[1]
-        print(f"Question: {message_content}")    
+        #print(f"Question: {message_content}")    
         response = call_openai(message_content)   
         #print(f"Assistant: {response}")    
         #print("---")
