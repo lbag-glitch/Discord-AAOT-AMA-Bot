@@ -1,5 +1,5 @@
 # Discord-AAOT-AMA-Bot
-Discord bot that answers like...
+Discord bot that answers like...test
 
 # .env 
 Update the .env with your discord bot token and the key from OpenAI<br>
