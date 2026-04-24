@@ -17,7 +17,7 @@ def call_openai(question):
         messages=[
              {
                  "role": "user",
-                 "content": f"Respond like a pirate to the following question:  {question}",
+                 "content": f"Respond like an expert of Large Format robotic additive manufacturing machines:  {question}",
             },
         ]
     )
@@ -34,7 +34,7 @@ client = discord.Client(intents=intents)
 
 @client.event
 async def on_ready():
-    print('We have logged in as {0.user}'.format(client))
+    print('Logged in as {0.user}'.format(client))
 
 @client.event
 async def on_message(message):
@@ -42,15 +42,15 @@ async def on_message(message):
         return
 
     if message.content.startswith('$hello'):
-        await message.channel.send('Hello!')
+        await message.channel.send('Hello! I am AAOT-AMA-Bot. Do you want to ask me anything about your products? ')
 
     if message.content.startswith('$question'):
         print(f"Message: {message.content}")                
         message_content = message.content.split("$question")[1]
         print(f"Question: {message_content}")    
         response = call_openai(message_content)   
-        print(f"Assistant: {response}")    
-        print("---")
+        #print(f"Assistant: {response}")    
+        #print("---")
         await message.channel.send(response)
 
 client.run(DISCORD_TOKEN)
